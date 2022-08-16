@@ -13,5 +13,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file guestbook-go/Dockerfile --tag :$(date +%s)
+      run: docker build -t hardikmittal18/redecell  -f guestbook-go/Dockerfile .
       
