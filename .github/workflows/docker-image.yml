@@ -5,7 +5,7 @@ on:
     branches: [ "master" ]
 
 env:
-  DOCKER_USER: ${{ secrets.DOCKER_USERERNAME }}
+  DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
 jobs:
