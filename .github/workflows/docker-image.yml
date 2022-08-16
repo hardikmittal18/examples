@@ -19,6 +19,8 @@ jobs:
     - name: Build the Docker image
       run: docker build -t hardikmittal18/redecell  -f guestbook-go/Dockerfile . 
     - name: Log in to Docker Hub
-      run: | # log into docker hub account
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
+      uses: docker/login-action@v1
+      with:
+        username: $DOCKER_USER
+        password: $DOCKER_PASSWORD
       
