@@ -23,5 +23,5 @@ jobs:
       with:
         context: guestbook-go/Dockerfile
         push: true
-        tags: ${{ env.GITHUB_SHA }}
+        tags: GITHUB_SHA
       
