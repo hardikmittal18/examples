@@ -13,5 +13,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: ls -la
+      run: docker build -t hardikmittal18/ridecell-image -f guestbook-go/Dockerfile .
       
