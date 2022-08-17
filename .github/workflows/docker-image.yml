@@ -3,7 +3,7 @@ name: Docker Image CI
 on:
   pull_request:
     types:
-      - opened
+      - closed
     branches:
       - 'master'
   pull_request_review:
