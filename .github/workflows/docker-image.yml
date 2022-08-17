@@ -3,16 +3,16 @@ name: Docker Image CI
 on:
   pull_request:
     types:
-      - opened
+      - closed
     branches:
       - 'master'
-  pull_request_review:
-    types: [submitted]  
+#  pull_request_review:
+#    types: [submitted]  
 
 jobs:
 
   build:
-    if: github.event.review.state == 'approved'   
+ #   if: github.event.review.state == 'approved'   
     runs-on: ubuntu-latest
 
     steps:
@@ -29,11 +29,12 @@ jobs:
       with:
         images: hardikmittal/redecell
     - name: Build and push Docker image
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v3
       with:
         context: .
         file: ./guestbook-go/Dockerfile
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
+      
       
