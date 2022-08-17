@@ -32,6 +32,6 @@ jobs:
 #        builder: ${{ steps.buildx.outputs.name }}
         file: ./guestbook-go/Dockerfile
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
+        tags: ${{ github.sha }}
         labels: ${{ steps.meta.outputs.labels }}
       
