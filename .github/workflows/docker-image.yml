@@ -4,18 +4,18 @@ on:
 #  push:
 #    branches:
 #      - 'master'
-  pull_request:
-    types:
-      - closed
-    branches:
-      - 'master'
-#  pull_request_review:
-#    types: [submitted]  
+#  pull_request:
+#    types:
+#      - closed
+#    branches:
+#      - 'master'
+  pull_request_review:
+    types: [submitted]  
 
 jobs:
 
   build:
- #   if: github.event.review.state == 'approved'   
+    if: github.event.review.state == 'approved'   
     runs-on: ubuntu-latest
 
     steps:
